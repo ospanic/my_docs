@@ -1,0 +1,27 @@
+<html>  
+    <head>
+	    <title>Http Dome</title>
+        <script stype="text/javascript">
+
+            function led_on()
+            {
+                var x = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHttp")
+                x.onreadystatechange = function()
+                {
+                    if (x.readyState == 4 && x.status == 200){}
+                };
+
+                x.open("GET", "/ON", true);
+                x.send();
+            }
+   
+        </script>
+    </head>
+
+    <body>
+        <div style="text-align: center" >
+            <button  onclick="led_on(); return false;">LED_ON(开灯)</button>
+            <button  onclick="save();return false;">LED_OFF(关灯)</button>
+        </div>
+    </body>
+</html>
